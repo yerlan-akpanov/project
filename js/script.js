@@ -1,7 +1,23 @@
 "use strict";
 
-const category = "toys";
+const numberOfFilms = +prompt("Сколько фильмов Вы уже посмотрели?", "");
 
-console.log("http://someurl.com/" + category + "/" + 4);
+const personalMovieDB = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false,
+};
 
-console.log(`http://someurl.com/${category}/4`);
+const a = prompt("Один из нескольких просмотренных фильмов?", "");
+const b = prompt("На сколько оцените его?", "");
+const c = prompt("Один из нескольких просмотренных фильмов?", "");
+const d = prompt("На сколько оцените его?", "");
+
+// personalMovieDB.movies = { a: b }; - неправильно
+
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+
+console.log(personalMovieDB);
